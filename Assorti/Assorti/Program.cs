@@ -9,10 +9,16 @@ using MongoDB.Driver;
 
 namespace Assorti
 {
+	public class Category
+	{
+		public string name { get; set; }
+	}
+
 	// класс ингридиента
 	public class Ingredient
 	{
 		public string name { get; set; }
+		public int price { get; set; }
 	}
 	// класс блюда
 	public class Dish
@@ -20,6 +26,7 @@ namespace Assorti
 		public string name { get; set; }
 		public string description { get; set; }
 		public int price { get; set; }
+		public Category category { get; set; }
 		public List<Ingredient> Ingredients { get; set; } 
 	}
 

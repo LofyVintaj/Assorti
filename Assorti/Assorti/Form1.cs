@@ -16,5 +16,24 @@ namespace Assorti
 		{
 			InitializeComponent();
 		}
+
+		private void panel1_MouseDown(object sender, MouseEventArgs e)
+		{
+			panel1.Capture = false;
+			Message m = Message.Create(base.Handle, 0xa1, new IntPtr(2), IntPtr.Zero);
+			this.WndProc(ref m);
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			CalculatePlat frm = new CalculatePlat();
+			frm.Show();
+			this.Hide();
+		}
 	}
 }

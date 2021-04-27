@@ -44,7 +44,7 @@ namespace Assorti
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			System.Net.WebRequest reqGET = System.Net.WebRequest.Create(@"https://api.spoonacular.com/recipes/random?number=1&apiKey=87baa01dfec640b29f2ecb5576218aae");
+			System.Net.WebRequest reqGET = System.Net.WebRequest.Create(@"https://api.spoonacular.com/recipes/random?number=100&apiKey=87baa01dfec640b29f2ecb5576218aae");
 			System.Net.WebResponse resp = reqGET.GetResponse();
 			System.IO.Stream stream = resp.GetResponseStream();
 			System.IO.StreamReader sr = new System.IO.StreamReader(stream);
@@ -53,22 +53,65 @@ namespace Assorti
 
 			dynamic dynJson = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(s);
 
-			Console.WriteLine(" ================= ");
+			Console.WriteLine(dynJson.recipes[0]);
 
-			List<Dish> list_dish = new List<Dish>(); 
+			// --------------------------------
+
+			List<Dish> list_dish = new List<Dish>();
+
+
+			// Подключаемся к монге
+			string connectionString = "AssortiBook";
+			MongoCRUD db = new MongoCRUD(connectionString);
+			
+
+
 
 			foreach (var i in dynJson.recipes)
 			{
 				Dish dish = new Dish
 				{
 					title = i.title,
-					readyInMinutes = 4,
+					readyInMinutes = i.readyInMinutes,
+					servings = i.servings,
+					instructions = i.instructions
 				};
+				List<Ingredient> list_ingridient = new List<Ingredient>();
+				foreach (var j in i.extendedIngredients)
+				{
+					Ingredient ingridient = new Ingredient
+					{
+						name = j.name,
+						amount = j.amount,
+						unit = j.unit
+					};
+					list_ingridient.Add(ingridient);
+				}
+				dish.ingredient = list_ingridient;
+
+				db.InsertRecord("Dish", dish);
 
 				list_dish.Add(dish);
+
+			}
+			Recipes recipes = new Recipes();
+			recipes.resipes = list_dish;
+
+			db.InsertRecord("Recipes", recipes);
+
+			// --------------------------------
+
+			Console.WriteLine(" ================= ");
+
+
+			foreach (var i in list_dish)
+			{
+				Console.WriteLine(i.title);
 			}
 
 			Console.WriteLine(" ================= ");
+
+	
 
 
 		}

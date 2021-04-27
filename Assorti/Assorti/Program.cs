@@ -20,6 +20,8 @@ namespace Assorti
 	{
 		public ObjectId Id { get; set; }
 		public string name { get; set; }
+		public int amount { get; set; }
+		public string unit { get; set; }
 	}
 
 	// Шаги
@@ -43,12 +45,12 @@ namespace Assorti
 		public string title { get; set; }
 
 		public int readyInMinutes { get; set; }
-		public string description { get; set; }
 
 		public int servings	 { get; set; }
 
 		public string instructions { get; set; }
 
+		public List<Ingredient> ingredient { get; set; }
 		//public Category category { get; set; }
 	}
 

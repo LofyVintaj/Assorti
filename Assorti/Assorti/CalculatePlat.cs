@@ -17,6 +17,8 @@ namespace Assorti
 			InitializeComponent();
 		}
 
+		List<Ingredient> user_declarated_list_ingredient = new List<Ingredient>();
+
 		private void button2_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
@@ -35,11 +37,15 @@ namespace Assorti
 			new_label.Height = 20;
 			new_label.Text = textBox1.Text;
 			tableLayoutPanel1.Controls.Add(new_label);
+			Ingredient user_declarated_ingedient = new Ingredient();
+			user_declarated_ingedient.name = textBox1.Text;
+			user_declarated_list_ingredient.Add(user_declarated_ingedient);
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-
+			string connectionString = "AssortiBook";
+			MongoCRUD db = new MongoCRUD(connectionString);
 		}
 	}
 }

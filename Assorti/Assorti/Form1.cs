@@ -49,43 +49,27 @@ namespace Assorti
 			System.IO.Stream stream = resp.GetResponseStream();
 			System.IO.StreamReader sr = new System.IO.StreamReader(stream);
 			string s = sr.ReadToEnd();
-			Console.WriteLine("--------------------------------------------------");
+
+
 			dynamic dynJson = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(s);
-			Console.WriteLine(s);
-			// закинуть этот элеммент в DISH 
-			Console.WriteLine(dynJson.recipes[0].title);
 
 			Console.WriteLine(" ================= ");
 
-			Dish dish = new Dish
+			List<Dish> list_dish = new List<Dish>(); 
+
+			foreach (var i in dynJson.recipes)
 			{
-				title = dynJson.recipes[0].title,
-				readyInMinutes = 4,
-			};
-			Console.WriteLine(dish.title);
+				Dish dish = new Dish
+				{
+					title = i.title,
+					readyInMinutes = 4,
+				};
+
+				list_dish.Add(dish);
+			}
+
 			Console.WriteLine(" ================= ");
 
-			//Dish dish = Newtonsoft.Json.JsonConvert.DeserializeObject<Dish>(dynJson);
-
-			//Dish dish = (Dish)dynJson;
-
-			//Console.WriteLine(dish.title);
-			//Console.WriteLine(dynJson);
-
-			//Console.WriteLine("-------------------");
-			//foreach (var i in dynJson.resipes)
-			//{
-			//	Console.WriteLine(i.title);
-			//}
-			//Console.WriteLine("-------------------");
-
-			Console.WriteLine("--------------------------------------------------");
-			//List<Dish> list = JsonConvert.DeserializeObject<List<Dish>>(s);
-
-			//foreach (var item in dynJson)
-			//{
-			//	Console.WriteLine("{0} {1}\n", item.recipes);
-			//}
 
 		}
 	}

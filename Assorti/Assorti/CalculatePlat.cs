@@ -18,6 +18,7 @@ namespace Assorti
 		}
 
 		List<Ingredient> user_declarated_list_ingredient = new List<Ingredient>();
+		List<Dish> result_list_dish = new List<Dish>();
 
 		private void button2_Click(object sender, EventArgs e)
 		{
@@ -46,6 +47,24 @@ namespace Assorti
 		{
 			string connectionString = "AssortiBook";
 			MongoCRUD db = new MongoCRUD(connectionString);
+			result_list_dish = db.ListDishAtProducts<Dish>("Dish", user_declarated_list_ingredient);
+			Console.WriteLine("---------------------");
+			foreach (var i in result_list_dish)
+			{
+				Console.WriteLine(i.title);
+			}
+			Console.WriteLine("---------------------");
+			ListResultDishes frm = new ListResultDishes();
+			frm.result_list_dish = result_list_dish;
+			frm.Show();
+			this.Hide();
+		}
+
+
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

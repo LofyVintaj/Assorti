@@ -88,5 +88,35 @@ namespace Assorti
 			var collection = db.GetCollection<T>(table);
 			collection.InsertOne(record);
 		}
+
+		public List<Dish> ListDishAtProducts<T>(string collectionName, List<Ingredient> ingedient_name )
+		{
+			var collection = db.GetCollection<Dish>(collectionName);
+			var filter = new List<Dish>();
+			var documents = collection.Find(Builders<Dish>.Filter.Empty).ToList();
+			List<Dish> docs = new List<Dish>();
+			int b = 0;
+			foreach (Dish doc in documents)
+			{
+				Console.WriteLine(doc.title);
+				List<string> list_name_ing = new List<string>();
+				foreach (var ingred in doc.ingredient)
+				{
+					list_name_ing.Add(ingred.name);
+				}
+				foreach (var i in ingedient_name)
+				{
+					if (list_name_ing.Contains(i.name))
+					{
+						docs.Add(doc);
+						break;
+					}
+				}
+				
+
+				
+			}
+			return docs;
+		}
 	}
 }

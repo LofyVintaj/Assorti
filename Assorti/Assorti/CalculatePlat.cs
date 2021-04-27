@@ -37,5 +37,9 @@ namespace Assorti
 			tableLayoutPanel1.Controls.Add(new_label);
 		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

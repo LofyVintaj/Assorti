@@ -87,7 +87,7 @@ namespace Assorti
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 128);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 433F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(607, 433);
 			this.tableLayoutPanel1.TabIndex = 2;
 			// 
@@ -112,6 +112,7 @@ namespace Assorti
 			this.button1.TabIndex = 4;
 			this.button1.Text = "Вычислить";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button3
 			// 

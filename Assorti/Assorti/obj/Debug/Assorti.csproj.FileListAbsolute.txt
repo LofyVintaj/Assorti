@@ -28,3 +28,5 @@ D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\MongoDB.Driver.
 D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\System.Buffers.xml
 D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\obj\Debug\Assorti.csproj.CopyComplete
+D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\Newtonsoft.Json.dll
+D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\Newtonsoft.Json.xml

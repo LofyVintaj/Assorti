@@ -30,9 +30,10 @@ namespace Assorti
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label2 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -47,6 +48,17 @@ namespace Assorti
 			this.panel1.Size = new System.Drawing.Size(1280, 50);
 			this.panel1.TabIndex = 0;
 			this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Lucida Handwriting", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Cornsilk;
+			this.label2.Location = new System.Drawing.Point(563, 5);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(140, 41);
+			this.label2.TabIndex = 5;
+			this.label2.Text = "Assorty";
 			// 
 			// button2
 			// 
@@ -75,22 +87,25 @@ namespace Assorti
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// label2
+			// button3
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Lucida Handwriting", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.Cornsilk;
-			this.label2.Location = new System.Drawing.Point(563, 5);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(140, 41);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "Assorty";
+			this.button3.FlatAppearance.BorderSize = 0;
+			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button3.Font = new System.Drawing.Font("Calibri", 24F);
+			this.button3.Location = new System.Drawing.Point(455, 183);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(356, 55);
+			this.button3.TabIndex = 4;
+			this.button3.Text = "Обновить данные в бд";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1280, 720);
+			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.panel1);
 			this.Font = new System.Drawing.Font("Calibri", 14.25F);
@@ -111,6 +126,7 @@ namespace Assorti
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button button3;
 	}
 }
 

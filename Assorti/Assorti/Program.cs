@@ -9,28 +9,55 @@ using MongoDB.Driver;
 
 namespace Assorti
 {
+	// Категории блюд
 	public class Category
 	{
 		public string name { get; set; }
 	}
 
-	// класс ингридиента
+	// Класс ингридиента
 	public class Ingredient
 	{
+		public ObjectId Id { get; set; }
 		public string name { get; set; }
-		public int price { get; set; }
 	}
+
+	// Шаги
+	public class Step
+	{
+		public string name { get; set; }
+	}
+
+	// Подробные инструкции
+	public class analyzedInstructions
+	{
+		public ObjectId Id { get; set; }
+		public string name { get; set; }
+		public List<Step> step { get; set; }
+	}
+
 	// класс блюда
 	public class Dish
 	{
-		public string name { get; set; }
+		public ObjectId Id { get; set; }
+		public string title { get; set; }
+
+		public int readyInMinutes { get; set; }
 		public string description { get; set; }
-		public int price { get; set; }
-		public Category category { get; set; }
-		public List<Ingredient> Ingredients { get; set; } 
+
+		public int servings	 { get; set; }
+
+		public string instructions { get; set; }
+
+		//public Category category { get; set; }
 	}
 
-	static class Program
+	public class Recipes
+	{
+		public List<Dish> resipes { get; set; }
+	}
+
+		static class Program
 	{
 		/// <summary>
 		/// Главная точка входа для приложения.

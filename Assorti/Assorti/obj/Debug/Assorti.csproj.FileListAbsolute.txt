@@ -31,3 +31,4 @@ D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\obj\Debug\Assorti.csproj.
 D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\Newtonsoft.Json.dll
 D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\bin\Debug\Newtonsoft.Json.xml
 D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\obj\Debug\Assorti.ListResultDishes.resources
+D:\college\КП и ЯП\CourseProject-\Assorti\Assorti\obj\Debug\Assorti.DetailDescriptionDish.resources

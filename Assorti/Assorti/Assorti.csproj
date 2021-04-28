@@ -121,6 +121,12 @@
     <Compile Include="CalculatePlat.Designer.cs">
       <DependentUpon>CalculatePlat.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailDescriptionDish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailDescriptionDish.Designer.cs">
+      <DependentUpon>DetailDescriptionDish.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CalculatePlat.resx">
       <DependentUpon>CalculatePlat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailDescriptionDish.resx">
+      <DependentUpon>DetailDescriptionDish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

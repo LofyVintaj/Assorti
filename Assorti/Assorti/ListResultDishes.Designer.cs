@@ -81,6 +81,7 @@ namespace Assorti
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(1249, 616);
 			this.flowLayoutPanel1.TabIndex = 3;
+			this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
 			// 
 			// label1
 			// 
@@ -102,7 +103,7 @@ namespace Assorti
 			this.Controls.Add(this.panel1);
 			this.Font = new System.Drawing.Font("Calibri", 14.25F);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+			this.Margin = new System.Windows.Forms.Padding(5);
 			this.Name = "ListResultDishes";
 			this.Text = "ListResultDishes";
 			this.Load += new System.EventHandler(this.ListResultDishes_Load);

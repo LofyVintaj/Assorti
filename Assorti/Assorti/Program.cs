@@ -118,5 +118,17 @@ namespace Assorti
 			}
 			return docs;
 		}
+
+		public Dish SearchDishAtName<T>(string collectionName, string dish_name)
+		{
+			Console.WriteLine(dish_name);
+			Console.WriteLine("НАШЕЛ");
+			var collection = db.GetCollection<Dish>(collectionName);
+			var filter = Builders<Dish>.Filter.Eq("title", dish_name);
+			var document = collection.Find(filter).FirstOrDefault();
+			return document;
+		}
+
+
 	}
 }
